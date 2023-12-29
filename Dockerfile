@@ -1,6 +1,6 @@
 FROM debian:latest
-ARG UID
-ARG GID
+ARG UID=1000
+ARG GID=1000
 
 ## Install Xtightvnc, openbox, websockify, supervisor, lxterminal, htop and sudo
 RUN apt-get update -y && \

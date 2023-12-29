@@ -7,23 +7,21 @@
 ## Run Locally
 
 Clone the project
-
 ```bash
-  git clone https://github.com/adrianharabula/debian-novnc.git
-  cd debian-novnc
+  git clone https://github.com/adrianharabula/debian-novnc.git && cd debian-novnc
 ```
 
-Build and run the Docker image
-
+Build the Docker image with nonroot user having same UID and GID as hostBuild and run the Docker image
 ```bash
-# Get your host's UID and GID
-export HOST_UID=$(id -u)
-export HOST_GID=$(id -g)
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t ahdn .
+```
+OR Build the Docker image with nonroot UID and GID set to default 1000
+```bash
+docker build -t ahdn .
+```
 
-# Build the Docker image
-docker build --build-arg UID=$HOST_UID --build-arg GID=$HOST_GID -t ahdn .
-
-# Run the Docker container
+Run the Docker container
+```bash
 docker run --name ahdn --rm -d -p 127.0.0.1:6080:6080 ahdn
 ```
 
