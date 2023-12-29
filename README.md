@@ -1,4 +1,4 @@
-# debian-novnc
+# Debian container accessible in a browser through noVNC
 
 - Debian container with Xtightvnc, noVNC and openbox
 - Can be accessed in a browser
@@ -8,16 +8,16 @@
 
 Clone the project
 ```bash
-  git clone https://github.com/adrianharabula/debian-novnc.git && cd debian-novnc
+  git clone https://github.com/adrianharabula/ahdn.git && cd ahdn
 ```
 
-Build the Docker image with nonroot user having same UID and GID as hostBuild and run the Docker image
-```bash
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t ahdn .
-```
-OR Build the Docker image with nonroot UID and GID set to default 1000
+Build the Docker image with nonroot UID and GID set to default 1000
 ```bash
 docker build -t ahdn .
+```
+OR build the Docker image with nonroot user having same UID and GID as host
+```bash
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t ahdn .
 ```
 
 Run the Docker container
