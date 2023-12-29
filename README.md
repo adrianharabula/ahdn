@@ -2,6 +2,7 @@
 
 - Debian container with Xtightvnc, noVNC and openbox
 - Can be accessed in a browser
+- Runs the latest noVNC client
 - If built from scratch nonroot user has the same UID and GID as host's user, otherwise it's 1000:1000
 
 ## Run Locally
