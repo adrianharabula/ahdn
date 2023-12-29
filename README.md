@@ -1,4 +1,4 @@
-# Debian container accessible in a browser through noVNC
+# Debian container browser accessible through noVNC
 
 - Debian container with Xtightvnc, noVNC and openbox
 - Can be accessed in a browser
