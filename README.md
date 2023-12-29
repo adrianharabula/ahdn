@@ -33,6 +33,10 @@ Access http://127.0.0.1:6080/vnc.html?resize=remote&quality=0&compression=0&auto
 
 ![image](https://github.com/adrianharabula/debian-novnc/assets/2271038/dcb63567-fcc8-4403-8a95-e015338d9fdc)
 
+## Customization
+
+- see the full list of parameters accepted by noVNC [here](https://github.com/novnc/noVNC/blob/master/docs/EMBEDDING.md#parameters)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
