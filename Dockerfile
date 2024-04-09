@@ -20,6 +20,22 @@ RUN sudo apt-get update -y && sudo apt-get install git ca-certificates -y && \
     cp -R noVNC/app noVNC/core noVNC/vendor/ noVNC/vnc.html novnc && \
     sudo chown -R root:root novnc && sudo mv novnc /usr/share/ && \
     rm -rf noVNC && sudo apt-get remove git ca-certificates -y && sudo apt-get autoremove -y && sudo apt-get clean -y
+COPY <<EOF /usr/share/novnc/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="refresh" content="0; url=vnc.html?resize=remote&quality=0&compression=0&autoconnect=true">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="vnc.html?resize=remote&quality=0&compression=0&autoconnect=true">click here</a>.</p>
+</body>
+</html>
+EOF
 
 USER root
 
