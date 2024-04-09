@@ -28,7 +28,7 @@ docker run --name ahdn --rm -d -p 127.0.0.1:6080:6080 ahdn
 
 ## Usage/Examples
 
-Access http://127.0.0.1:6080/vnc.html?resize=remote&quality=0&compression=0&autoconnect=true and start using the container:
+Access http://127.0.0.1:6080 and start using the container:
 
 ![image](https://github.com/adrianharabula/debian-novnc/assets/2271038/dcb63567-fcc8-4403-8a95-e015338d9fdc)
 
