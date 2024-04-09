@@ -56,7 +56,7 @@ redirect_stderr=true
 
 [program:websockify]
 priority=0
-command=websockify --web=/usr/share/novnc/ --cert=/etc/pki/tls/certs/novnc.crt --key=/etc/pki/tls/certs/novnc.key 6080 localhost:5900
+command=websockify --web=/usr/share/novnc/ 6080 localhost:5900
 autorestart=true
 stdout_logfile=/dev/fd/1
 stdout_logfile_maxbytes=0
