@@ -1,4 +1,6 @@
-name: ci
+# This workflow is inspired from
+# https://docs.docker.com/build/ci/github-actions/multi-platform/#distribute-build-across-multiple-runners
+name: Publish Docker image
 
 on:
   push:
@@ -32,6 +34,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
+          tags: |
+            # set latest tag for master branch
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}',
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
