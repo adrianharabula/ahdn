@@ -12,8 +12,8 @@ env:
 
 jobs:
   build:
-    permissions: write-all
     runs-on: ubuntu-latest
+    permissions: write-all
     strategy:
       fail-fast: false
       matrix:
@@ -87,6 +87,7 @@ jobs:
 
   merge:
     runs-on: ubuntu-latest
+    permissions: write-all
     needs:
       - build
     steps:
