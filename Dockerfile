@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM --platform=$TARGETPLATFORM debian:latest
 ARG UID=1000
 ARG GID=1000
 
