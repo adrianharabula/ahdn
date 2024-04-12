@@ -67,6 +67,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          provenance: false
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: |
