@@ -19,7 +19,7 @@ RUN sudo apt-get update -y && sudo apt-get install git ca-certificates -y && \
     git clone https://github.com/novnc/noVNC.git && mkdir novnc && \
     cp -R noVNC/app noVNC/core noVNC/vendor/ noVNC/vnc.html novnc && \
     sudo chown -R root:root novnc && sudo mv novnc /usr/share/ && \
-    rm -rf noVNC && sudo apt-get remove git ca-certificates -y && sudo apt-get autoremove -y && sudo apt-get clean -y
+    rm -rf noVNC && sudo apt-get remove git -y && sudo apt-get autoremove -y && sudo apt-get clean -y
 COPY <<EOF /usr/share/novnc/index.html
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +72,7 @@ stdout_logfile_maxbytes=0
 redirect_stderr=true
 EOF
 
-COPY <<EOF /etc/xdg/openbox/menu.xml
+COPY <<EOF /var/lib/openbox/debian-menu.xml
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/share/openbox/menu.xsd">
     <menu id="root-menu" label="Openbox 3">
